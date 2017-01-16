@@ -197,6 +197,7 @@ Sometimes you may need to associate records on different columns, you may use `s
 ```js
 var City = sequelize.define('city', { countryCode: Sequelize.STRING });
 var Country = sequelize.define('country', { isoCode: Sequelize.STRING });
+
 // Here we can connect countries and cities base on country code
 Country.hasMany(City, {foreignKey: 'countryCode', sourceKey: 'isoCode'});
 City.belongsTo(Country, {foreignKey: 'countryCode', targetKey: 'isoCode'});
