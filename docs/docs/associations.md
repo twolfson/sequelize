@@ -193,6 +193,7 @@ This will add the attribute `projectId` or `project_id` to User. Instances of Pr
 But we want more! Let's define it the other way around by creating a many to many association in the next section:
 
 Sometimes you may need to associate records on different columns, you may use `sourceKey` option:
+
 ```js
 var City = sequelize.define('city', { countryCode: Sequelize.STRING });
 var Country = sequelize.define('country', { isoCode: Sequelize.STRING });
@@ -200,6 +201,7 @@ var Country = sequelize.define('country', { isoCode: Sequelize.STRING });
 Country.hasMany(City, {foreignKey: 'countryCode', sourceKey: 'isoCode'});
 City.belongsTo(Country, {foreignKey: 'countryCode', targetKey: 'isoCode'});
 ```
+
 
 ## Belongs-To-Many associations
 
